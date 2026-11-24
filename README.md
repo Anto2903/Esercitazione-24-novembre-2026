@@ -1,0 +1,1 @@
+# Esercitazione-24-novembre-2026
