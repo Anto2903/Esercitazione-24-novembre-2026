@@ -1,113 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Form to Tabella 2</title>
-  <style>
-   .casella {
-        		margin-left: 5px;
-				margin-top: 10px;
-				margin-right: 15px;
-				margin-bottom: 10px;
-				font-family: New Times Roman;
-        		}
-        		
-        		#submit {
-        			margin-top: 15px;
-        		}
-        		
-        		#form {
-        			width: 500px;
-        		}
-        		
-        		#tabella {
-        			width: 500px;
-        			margin-left: auto;
-        			margin-right: auto;
-        			border: 1px;
-        		}
-  </style>
+	<meta charset="utf-8" />
+	<title>Assistenza telefoni</title>
+	<style>
+		#form {
+			 max-width: 480px;
+  			 margin: 0 auto;
+  			 padding: 24px;
+ 			 background-color: #ffffff;
+ 			 border: 1px solid #d0d7de;
+		}
+	
+		.casella {
+			margin-left: 30px;
+			margin-top: 10px;
+			margin-right: 15px;
+			margin-bottom: 15px;
+			font-family: times new roman;
+		}
+		
+		textarea {
+			resize: none;
+		}
+		
+			#ricevuta {
+			display: none;
+		}
+		
+		#ricevuta h2{
+			text-align: center;
+			font: times new roman;
+			font-size: 16px;
+		}
+		
+		#ricevuta tr , td {
+			border: 1px solid black;
+		}
+		
+		table {
+			width: 900px;
+			border: 1px solid black;
+		}
+		
+		#tabella{
+			width: 900px;
+			margin-left: auto;
+			margin-right: auto;			
+		}
+		
+		#submit {
+			display: block;
+  			margin: 0 auto;
+			padding: 5px 10px ;
+			margin-top: 15px;
+		}
+		
+		#indietro {
+			 display: block;
+  			 margin: 0 auto;
+			 padding-top: 5px 10px;
+		}	
+	</style>
 </head>
 <body>
-	<form id="form" name="modulo" method="post"> 
+	<form id="form" name="modulo1" method="post">
 		<fieldset>
 			<legend>DATI CLIENTE</legend>
         			Nome <input name="nome" type="text" class="casella" maxlength="20" /><br />
         			Cognome <input name="cognome" type="text" class="casella" maxlength="20" /><br />
         			Codice Fiscale <input name="codice_fiscale" type="text" class="casella" maxlength="16" /><br />
         			Città <input name="città" type="text" class="casella" maxlength="20" /><br />
-        			Gestore telefonico <input name="gestore_telefonico" type="text" class="casella" maxlength="10" /><br />
+        			Gestore telefonico <select name="gestore_telefonico" class="casella">
+        								<option class="casella" selected hidden="true"></option>
+        								<option class="casella" value="Tim">Tim</option>
+        								<option class="casella" value="Vodafone">Vodafone</option>
+        								<option class="casella" value="Wind3">Wind 3</option>
+        								<option class="casella" value="Iliad">Iliad</option>
+        								<option class="casella" value="Lycamobile">Lycamobile</option>
+        								<option class="casella" value="Fastweb">Fastweb</option>
+        								</select><br />
         			Numero di telefono dispositivo <input name="tel1" type="tel" class="casella" maxlength="10" /><br />
-        			Marca dispositivo <input name="marca_dispositivo" type="text" class="casella" maxlength="15" /><br />
-        			Modella dispositivo  <input name="modello_dispositivo" type="text" class="casella" maxlength="20" /><br />
-        			Breve descrizione del problema <input name="descrizione" type="text" class="casella" maxlength="30" /><br />
+        			Marca dispositivo <select name="marca_dispositivo" class="casella">
+        								<option class="casella" selected hidden="true"></option>
+        								<option class="casella" value="Honor">Honor</option>
+        								<option class="casella" value="Samsung">Samsung</option>
+        								<option class="casella" value="Apple">Apple</option>
+        								<option class="casella" value="Motorola">Motorola</option>
+        								<option class="casella" value="Xiaomi">Xiaomi</option>
+        								<option class="casella" value="Oppo">Oppo</option>
+        								<option class="casella" value="Realme">Realme</option>
+        								</select><br />
+        			Modello dispositivo  <input name="modello_dispositivo" type="text" class="casella" maxlength="20" /><br />       			 
+        			Breve descrizione del problema<textarea name="descrizione" class="casella"></textarea><br />
         			Recapito di contatto <input name="tel2" type="tel" class="casella" maxlength="10" /><br />    
-        			<input name="button" type="button" id="submit" value="Invia" />	
+        			<input name="button" type="button" id="submit" value="Invia" />
 		</fieldset>
 	</form>
-		
-		<div id="contenitoreTabella" class="nascosto">
-			<table id="tabellaDati">
-				<thead>
-					<tr>
-						<th>Cristalli liquidi - Corso Giuseppe Garibaldi, Castrovillari</th>
-        				<th>Ricevuta di consegna</th>    
-					</tr>
-				</thead>
-				<tbody id="dati" class="nascosto">
-					<tr>
-						<td><input name="uno" type="text" class="ricevuta" readonly /></td>
-					</tr>
-					<tr>
-						<td><input name="due" type="text" class="ricevuta" readonly /></td>
-					</tr>
-					<tr>
-						<td><input name="tre" type="text" class="ricevuta" readonly /></td>
-					</tr>
-					<tr>
-						<td><input name="quattro" type="text" class="ricevuta" readonly /></td>
-					</tr>
-					<tr>
-						<td><input name="cinque" type="text" class="ricevuta" readonly /></td>
-					</tr>
-					<tr>
-						<td><input name="sei" type="tel" class="ricevuta" readonly /></td>
-					</tr>
-					<tr>
-						<td><input name="sette" type="text" class="ricevuta" readonly /></td>
-					</tr>
-					<tr>
-						<td><input name="otto" type="text" class="ricevuta" readonly /></td>
-					</tr>
-					<tr>
-						<td><input name="nove" type="text" class="ricevuta" readonly /></td>
-					</tr>
-					<tr>
-						<td><input name="dieci" type="tel" class="ricevuta" readonly /></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		
-		<script>
-	    
-	    form.addEventListener("submit", function(evento) {
-	        evento.preventDefault();
-	        
-	        document.getElementById("submit").addEventListener("click", function() {
-    			 document.dati.uno.value = documento.modulo.nome.value;
-    			 documento.dati.due.value = documento.modulo.cognome.value;
-    			 document.dati.tre.value = document.modulo.codice_fiscale.value;
-    			 document.dati.quattro.value = document.modulo.città.value;
-    			 document.dati.cinque.value = document.modulo.gestore_telefonico.value;
-    			 document.dati.sei.value = document.modulo.tel1.value;
-    			 document.dati.sette.value = document.modulo.marca_dispositivo.value;
-    			 document.dati.otto.value = document.modulo.modello_dispositivo.value;
-    			 document.dati.nove.value = document.modulo.descrizione.value;
-    			 document.dati.dieci.value = document.modulo.tel2.value;
-	    	 })
-   	 	})
-	  
-		</script>
+	<div id="ricevuta">
+		<form id="form2" name="modulo2"> 
+		<h2>Cristalli liquidi - Corso Giuseppe Garibaldi, Castrovillari - <br />
+			Ricevuta di consegna</h2>
+		<table id="tabella">
+			<tr>
+				<td>Nome:</td>
+				<td><input name="uno" class="ricevuta" readonly /></td>
+			</tr>
+			<tr>
+				<td>Cognome:</td>
+				<td><input name="due" class="ricevuta" readonly /></td>
+			</tr>
+			<tr>
+				<td>Codice fiscale:</td>
+				<td><input name="tre" class="ricevuta" readonly /></td>
+			</tr>
+			<tr>
+				<td>Città:</td>
+				<td><input name="quattro" class="ricevuta" readonly /></td>
+			</tr>
+			<tr>
+				<td>Gestore telefonico:</td>
+				<td><input name="cinque" class="ricevuta" readonly /></td>
+			</tr>
+			<tr>
+				<td>Numero di telefono dispositivo:</td>
+				<td><input name="sei" class="ricevuta" readonly /></td>
+			</tr>
+			<tr>
+				<td>Marca dispositivo:</td>
+				<td><input name="sette" class="ricevuta" readonly /></td>
+			</tr>
+			<tr>
+				<td>Modello dispositivo:</td>
+				<td><input name="otto" class="ricevuta" readonly /></td>
+			</tr>
+			<tr>
+				<td>Breve descrizione del problema:</td>
+				<td><input name="nove" class="ricevuta" readonly /></td>
+			</tr>
+			<tr>
+				<td>Recapito di contatto:</td>
+			<td><input name="dieci" class="ricevuta" readonly /></td>
+			</tr>			
+		</table>
+			<input type="button" id="indietro" value="Torna al form">
+		</form>
+	</div>
+	<script>
+	
+		document.getElementById("submit").addEventListener("click", function(){
+			
+	     	document.modulo2.uno.value = document.modulo1.nome.value;
+		    document.modulo2.due.value = document.modulo1.cognome.value;
+		    document.modulo2.tre.value = document.modulo1.codice_fiscale.value;
+		    document.modulo2.quattro.value = document.modulo1.città.value;
+		    document.modulo2.cinque.value = document.modulo1.gestore_telefonico.value;
+		    document.modulo2.sei.value = document.modulo1.tel1.value;
+		    document.modulo2.sette.value = document.modulo1.marca_dispositivo.value;
+		    document.modulo2.otto.value = document.modulo1.modello_dispositivo.value;
+		    document.modulo2.nove.value = document.modulo1.descrizione.value;
+		    document.modulo2.dieci.value = document.modulo1.tel2.value;
+
+		    document.getElementById("form").style.display = "none";
+		    document.getElementById("ricevuta").style.display = "block";
+		});	  
+	
+	document.getElementById("indietro").addEventListener("click", function() {
+
+	    document.getElementById("ricevuta").style.display = "none";
+
+	    document.getElementById("form").style.display = "block";
+
+	});
+	</script>
 </body>
 </html>
