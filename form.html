@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form to Tabella 2</title>
+  <style>
+   .casella {
+        		margin-left: 5px;
+				margin-top: 10px;
+				margin-right: 15px;
+				margin-bottom: 10px;
+				font-family: New Times Roman;
+        		}
+        		
+        		#submit {
+        			margin-top: 15px;
+        		}
+        		
+        		#form {
+        			width: 500px;
+        		}
+        		
+        		#tabella {
+        			width: 500px;
+        			margin-left: auto;
+        			margin-right: auto;
+        			border: 1px;
+        		}
+  </style>
+</head>
+<body>
+	<form id="form" name="modulo" method="post"> 
+		<fieldset>
+			<legend>DATI CLIENTE</legend>
+        			Nome <input name="nome" type="text" class="casella" maxlength="20" /><br />
+        			Cognome <input name="cognome" type="text" class="casella" maxlength="20" /><br />
+        			Codice Fiscale <input name="codice_fiscale" type="text" class="casella" maxlength="16" /><br />
+        			Città <input name="città" type="text" class="casella" maxlength="20" /><br />
+        			Gestore telefonico <input name="gestore_telefonico" type="text" class="casella" maxlength="10" /><br />
+        			Numero di telefono dispositivo <input name="tel1" type="tel" class="casella" maxlength="10" /><br />
+        			Marca dispositivo <input name="marca_dispositivo" type="text" class="casella" maxlength="15" /><br />
+        			Modella dispositivo  <input name="modello_dispositivo" type="text" class="casella" maxlength="20" /><br />
+        			Breve descrizione del problema <input name="descrizione" type="text" class="casella" maxlength="30" /><br />
+        			Recapito di contatto <input name="tel2" type="tel" class="casella" maxlength="10" /><br />    
+        			<input name="button" type="button" id="submit" value="Invia" />	
+		</fieldset>
+	</form>
+		
+		<div id="contenitoreTabella" class="nascosto">
+			<table id="tabellaDati">
+				<thead>
+					<tr>
+						<th>Cristalli liquidi - Corso Giuseppe Garibaldi, Castrovillari</th>
+        				<th>Ricevuta di consegna</th>    
+					</tr>
+				</thead>
+				<tbody id="dati" class="nascosto">
+					<tr>
+						<td><input name="uno" type="text" class="ricevuta" readonly /></td>
+					</tr>
+					<tr>
+						<td><input name="due" type="text" class="ricevuta" readonly /></td>
+					</tr>
+					<tr>
+						<td><input name="tre" type="text" class="ricevuta" readonly /></td>
+					</tr>
+					<tr>
+						<td><input name="quattro" type="text" class="ricevuta" readonly /></td>
+					</tr>
+					<tr>
+						<td><input name="cinque" type="text" class="ricevuta" readonly /></td>
+					</tr>
+					<tr>
+						<td><input name="sei" type="tel" class="ricevuta" readonly /></td>
+					</tr>
+					<tr>
+						<td><input name="sette" type="text" class="ricevuta" readonly /></td>
+					</tr>
+					<tr>
+						<td><input name="otto" type="text" class="ricevuta" readonly /></td>
+					</tr>
+					<tr>
+						<td><input name="nove" type="text" class="ricevuta" readonly /></td>
+					</tr>
+					<tr>
+						<td><input name="dieci" type="tel" class="ricevuta" readonly /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<script>
+	    
+	    form.addEventListener("submit", function(evento) {
+	        evento.preventDefault();
+	        
+	        document.getElementById("submit").addEventListener("click", function() {
+    			 document.dati.uno.value = documento.modulo.nome.value;
+    			 documento.dati.due.value = documento.modulo.cognome.value;
+    			 document.dati.tre.value = document.modulo.codice_fiscale.value;
+    			 document.dati.quattro.value = document.modulo.città.value;
+    			 document.dati.cinque.value = document.modulo.gestore_telefonico.value;
+    			 document.dati.sei.value = document.modulo.tel1.value;
+    			 document.dati.sette.value = document.modulo.marca_dispositivo.value;
+    			 document.dati.otto.value = document.modulo.modello_dispositivo.value;
+    			 document.dati.nove.value = document.modulo.descrizione.value;
+    			 document.dati.dieci.value = document.modulo.tel2.value;
+	    	 })
+   	 	})
+	  
+		</script>
+</body>
+</html>
